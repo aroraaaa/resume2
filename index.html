@@ -3,27 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collaborative Drawing Chat</title>
-    <style>
-        #drawingCanvas {
-            border: 1px solid #ccc;
-            cursor: crosshair;
-        }
-    </style>
+    <title>Portfolio</title>
 </head>
 <body>
-    <h1>Collaborative Drawing Chat</h1>
-    <div>
-        <canvas id="drawingCanvas" width="800" height="400"></canvas>
+    <div id="header">
+        <nav>
+            <p class="Name">Gaurav Arora</p>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#ab">About</a></li>
+                <li><a href="#c">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="intro">
+            <h1>Software Developer</h1>
+            <p>Hey, I am Gaurav</p>
+        </div>
     </div>
-    <div>
-        <textarea id="chatInput" placeholder="Type a message..."></textarea>
-        <button onclick="sendMessage()">Send</button>
-    </div>
-    <ul id="chatMessages"></ul>
+    <div class="about" id="ab">
+        <h1>About me</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, voluptatum quisquam delectus porro velit repellat omnis? In, voluptas delectus, magni, sit dolore eos deserunt molestiae illum natus quibusdam corporis dolorem suscipit incidunt ratione assumenda possimus fuga laboriosam odio officiis modi perspiciatis recusandae sint ad. Minus, expedita.</p>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
-    <script src="scripts.js"></script>
+        <div class="tabtitle">
+            <p class="tablink active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tablink" onclick="opentab('education')">Education</p>
+            <p class="tablink"onclick="opentab('achievements')">Achievements</p>
+        </div>
+        <div class="tabcontent active-tab" id="skills">
+            <ul>
+                <li><span>C++</span> <br>Data Structures and Algorithms</li>
+                <li><span>Web Development</span> <br>Html,Css,JavaScript</li>
+            </ul>
+        </div>
+        <div class="tabcontent" id="education">
+            <ul>
+                <li><span>Class 12 2020</span> <br>
+                Kendriya Vidyalaya AFS Rajokri</li>
+                <li><span>B.Tech in Electrical Engineering 2021-2025</span> <br> Delhi Technological University</li>
+            </ul>
+        </div>
+        <div class="tabcontent" id="achievements">
+            <ul>
+                <li>Got 97.56 percentile in JEE Mains</li>
+                <li>Got 95.4% in Class 12</li>
+            </ul>
+        </div>
+    </div>
+    <div class="contact" id="c">
+        <div class="container">
+            <div class="row">
+                <div class="left">
+                    <h1>Contact Me</h1>
+                    <p>abcd@gmail.com</p>
+                    <p>283849939</p>
+                    <a href="assts\images\Resume (2).pdf" download class="btn" >Download CV</a>
+                </div>
+                <div class="right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="E-mail id" placeholder="Your Mail" required>
+                        <textarea name="Message" placeholder="Your Message" rows="6"></textarea>
+                        <button class="btn">submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&display=swap');
+
+body{
+    margin: 0;
+    background-color: black;
+    font-family: "Raleway", sans-serif;
+}
+.Name{
+    color: rebeccapurple;
+    font-family: "Black Ops One", system-ui;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    padding: 0px 92px
+
+}
+.intro{
+    padding: 0 100px;
+    
+}
+.intro h1{
+    font-family: "Black Ops One", system-ui;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+}
+#header{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-image:url("assts/images/bg.webp");
+    background-size: cover;
+    background-position: relative;
+    width: 100%;
+    height: 100vh;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+ nav ul li{
+    display: inline-block;
+    margin: 10px 20px;
+    list-style: none;
+ }
+ nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+ }
+ nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    background: rgb(209, 1, 1);
+    transition: 0.5s;
+ }
+ nav ul li a:hover::after{
+    width: 100%;
+ }
+ .intro{
+    color: white;
+ }
+ .about{
+    color: white;
+    padding: 20px;
+    background-color: black;
+ }
+ .tabtitle{
+    list-style: none;
+    display: flex;
+    
+ }
+ .tablink{
+    margin-right: 20px;
+    cursor: pointer;
+    position: relative;
+ }
+ .tablink::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    background: rgb(209, 1, 1);
+    transition: 0.5s;
+ }
+ .tablink.active-link::after{
+    width: 70%;
+ }
+ .tabcontent ul li{
+    color: white;
+ }
+ .tabcontent{
+    display: none;
+ }
+ .tabcontent.active-tab{
+    display: block;
+ }
+.row{
+    color: white;
+    display: flex;
+    margin: 20px;
+    justify-content: space-around;
+}
+.left{
+    padding: 2px;
+}
+.right{
+    flex-basis: 60%;
+}
+form input,form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    border-radius: 6px;
+    color: #fff;
+    padding: 15px;
+    margin: 15px 0;
+}
+.btn{
+    background: rgb(255, 7, 7);
+    padding: 8px;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.about{
+    padding: 30px 100px;
+}
+    </style>
+    <script>
+        function opentab(tabname) {
+            var tablinks = document.getElementsByClassName("tablink");
+            var tabcontents = document.getElementsByClassName("tabcontent");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active-link");
+            }
+            for (var i = 0; i < tabcontents.length; i++) {
+                tabcontents[i].classList.remove("active-tab");
+            }
+            document.getElementById(tabname).classList.add("active-tab");
+            event.currentTarget.classList.add("active-link");
+        }
+
+    </script>
 </body>
 </html>
